@@ -2,15 +2,21 @@
 <html>
   <head>
     <link rel='stylesheet' type='css' href='styles.css'>
+    <link href='http://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
   </head>
   <body>
   <div class="container">
+  <div class="header">
+    <div class="title">
+      <h1>PAC-YOU-MAN</h1>
+    </div>
     <div class="scoreboard">
       <!-- Modify the scoreboard when important events occur in your game! -->
-      <div class="high">High score: <span class="bestScore">0</span></div>
-      <div class="current">Current score: <span class ="score">0</span></div>
-      <div class="collisions">Collisions: <span class="collision-count">0</span></div>
+      <div class="high"><span><b>High score: </b></span><span class="bestScore">0</span></div>
+      <div class="current"><span><b>Current score: </b></span><span class ="score">0</span></div>
+      <div class="collisions"><span><b>Collisions: </b></span><span class="collision-count">0</span></div>
     </div>
+  </div>
   </div>
     <script src="d3.js" charset="utf-8"></script>
     <script src='watchout.js'></script>

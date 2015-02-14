@@ -3,3 +3,58 @@
 /* Note: an asteroid image is included in this repo.
 Feel free to use it if you like. */
 
+body{
+  background-color: #000;
+  margin: 20px 0px;
+}
+.container {
+  width: 680px;
+  height: 570px;
+  top: 50%;
+  left: 50%;
+  margin-top: -285px;
+  margin-left: -340px;
+  position: absolute;
+}
+.header {
+  width: 680px;
+  margin: 10px auto;
+  min-height: 60px;
+}
+.title {
+  float:left;
+}
+.title h1 {
+  color: #FFFFFF;
+  font-family: 'Orbitron', sans-serif, helvetica;
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 4px;
+}
+.scoreboard {
+  width: 180px;
+  min-height: 60px;
+  margin: 0 auto;
+  float: right;
+  position: relative;
+  display: block;
+}
+.scoreboard span {
+  color: #FFFF00;
+  font-family: 'Orbitron', sans-serif, helvetica;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 4px;
+}
+.gameboard {
+  width: 680px;
+  height: 460px;
+  margin: 10px auto;
+  padding: 0px;
+  background: url('img/bg.png') no-repeat center center;
+  background-size: auto 100%;
+  position: relative;
+  display: block;
+}
