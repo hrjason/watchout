@@ -4,7 +4,8 @@ var gameObject = {
   height  : 450 ,
   width   : 700,
   nEnemies: 30,
-  padding : 5
+  padding : 5,
+  deathTimer: 0
 };
 
 var gameStats = {
@@ -131,6 +132,18 @@ var updateStats = function() {
   d3.select('.collision-count').text(''+gameStats.collisions);
 };
 
+var updateScore = function() {
+  d3.select('.score').text(''+gameStats.score);
+};
+
+var highScore = function() {
+  if(gameStats.score >= gameStats.bestScore){
+    gameStats.bestScore = gameStats.score;
+    d3.select('.bestScore').text(''+gameStats.bestScore);
+  }
+};
+
+
 setInterval(function() {
   update();
 }, 2000);
@@ -138,9 +151,16 @@ setInterval(function() {
 setInterval(function() {
   //console.log(collisionCheck());
   //console.log(gameStats.collisions);
-  if(collisionCheck()){
+  if(gameObject.deathTimer < 0)
+    gameStats.score++;
+  if(collisionCheck() && gameObject.deathTimer < 0){
+    highScore();
+    gameStats.score = 0;
     gameStats.collisions++;
+    gameObject.deathTimer = 20;
   }
+  gameObject.deathTimer--;
+  updateScore();
   updateStats();
-}, 10);
+}, 50);
 
